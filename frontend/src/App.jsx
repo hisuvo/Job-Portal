@@ -1,10 +1,14 @@
 import React from "react";
+import Navbar from "./shared/Navbar";
+import { Outlet } from "react-router";
 
 const App = () => {
   return (
     <div>
-      <h1 className="text-3xl">This is app</h1>
-      <button className="btn">Check</button>
+      <Navbar />
+      <main className="container mx-auto">
+        <Outlet />
+      </main>
     </div>
   );
 };

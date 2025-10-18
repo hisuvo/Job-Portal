@@ -16,6 +16,12 @@ h6 {
   font-style: normal;
 }
 
+li .active {
+  color: #00a9e7;
+  transition: ease-in-out;
+  transition-duration: 300ms;
+}
+
 body {
   font-family: "Sulphur Point", sans-serif;
   font-weight: 400;
