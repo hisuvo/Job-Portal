@@ -1,16 +1,9 @@
-import { Outlet } from "react-router";
-import Navbar from "../shared/Navbar";
+import React from "react";
 
 const MainLayout = () => {
   return (
     <div>
-      <header>
-        <Navbar />
-      </header>
-      <main className="container mx-auto px-2">
-        <Outlet />
-      </main>
-      <footer></footer>
+      <h1>This is main layout</h1>
     </div>
   );
 };

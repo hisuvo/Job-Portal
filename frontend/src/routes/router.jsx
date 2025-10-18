@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router";
 import App from "../App";
 import NotFount from "../pages/NotFount";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -8,7 +10,6 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFount />,
     children: [
-      { path: "/", index: true },
       { path: "/candidate", element: <h1>This is candidate</h1> },
       { path: "/employers", element: <h2>This is employers</h2> },
       { path: "/jobs", element: <h2>This is JOBS</h2> },
@@ -17,9 +18,14 @@ const router = createBrowserRouter([
       { path: "/price", element: <h2>This is price</h2> },
     ],
   },
+
   {
-    path: "/dashbord/candidate",
-    element: <h1>This is dashbord layout candidate</h1>,
+    path: "/auth/login",
+    element: <Login />,
+  },
+  {
+    path: "/auth/register",
+    element: <Register />,
   },
   {
     path: "/dashbord/employer",

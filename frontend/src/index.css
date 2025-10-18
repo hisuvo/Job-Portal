@@ -17,8 +17,10 @@ h6 {
 }
 
 li .active {
-  color: #00a9e7;
+  color: #fff;
+  background-color: #0088fe;
   transition: ease-in-out;
+  width: 100%;
   transition-duration: 300ms;
 }
 
