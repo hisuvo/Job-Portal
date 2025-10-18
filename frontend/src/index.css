@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Sulphur+Point:wght@300;400;700&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* It use as a tilte font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600px;
+  font-style: normal;
+}
+
+body {
+  font-family: "Sulphur Point", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
