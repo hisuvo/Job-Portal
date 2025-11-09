@@ -1,20 +1,48 @@
-import React from "react";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Link } from "react-router";
+import { auth } from "../firebase/firebase.init";
 
 const Login = () => {
+  const provider = new GoogleAuthProvider();
+
+  const loginWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="min-h-screen flex flex-col gap-4 justify-center items-center">
-      <h2 className="text-4xl font-semibold">This is Login page</h2>
-      <div className="max-w-lg mx-auto w-full p-4 border">
-        <p>
-          {" "}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, velit
-          doloremque fuga itaque quia eligendi temporibus sint fugit cum rem
-          quae et dolor, ducimus sequi consequatur placeat. Doloremque libero ab
-          corrupti ipsam mollitia laborum ullam, nemo reprehenderit molestias
-          quia accusantium?
-        </p>
+      <h2 className="text-2xl font-semibold">Welcome Back, Please Login!</h2>
+
+      <div className="max-w-lg mx-auto w-full">
+        {/* ------- Login Form Start --------- */}
+
+        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full max-w-lg border p-4 md:p-8">
+          <label className="label">Email</label>
+          <input type="email" className="input w-full" placeholder="Email" />
+
+          <label className="label">Password</label>
+          <input
+            type="password"
+            className="input w-full"
+            placeholder="Password"
+          />
+
+          <button className="btn btn-neutral mt-4">Login</button>
+        </fieldset>
+
+        {/* ------- Login Form End --------- */}
+
+        <div className="py-4 text-center space-x-2">
+          <button onClick={loginWithGoogle} className="btn btn-secondary">
+            Google
+          </button>
+          <button className="btn btn-secondary">Facebook</button>
+          <button className="btn btn-secondary">GitHub</button>
+        </div>
       </div>
+
       <Link to={"/auth/register"}>Regist-</Link>
     </div>
   );
