@@ -1,13 +1,13 @@
 import { createBrowserRouter } from "react-router";
-import App from "../App";
 import NotFount from "../pages/NotFount";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import Root from "../Layout/Root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <Root />,
     errorElement: <NotFount />,
     children: [
       { path: "/candidate", element: <h1>This is candidate</h1> },

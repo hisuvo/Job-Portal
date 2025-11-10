@@ -1,16 +1,7 @@
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { Link } from "react-router";
-import { auth } from "../firebase/firebase.init";
+import { handleFacebookLogin, handleGooleLigin } from "../auth/authentication";
 
 const Login = () => {
-  const provider = new GoogleAuthProvider();
-
-  const loginWithGoogle = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => console.log(result))
-      .catch((error) => console.log(error));
-  };
-
   return (
     <div className="min-h-screen flex flex-col gap-4 justify-center items-center">
       <h2 className="text-2xl font-semibold">Welcome Back, Please Login!</h2>
@@ -34,12 +25,15 @@ const Login = () => {
 
         {/* ------- Login Form End --------- */}
 
-        <div className="py-4 text-center space-x-2">
-          <button onClick={loginWithGoogle} className="btn btn-secondary">
+        <div className="py-4 text-center space-x-2 space-y-2">
+          <button onClick={handleGooleLigin} className="btn btn-secondary">
             Google
           </button>
-          <button className="btn btn-secondary">Facebook</button>
           <button className="btn btn-secondary">GitHub</button>
+          <button onClick={handleFacebookLogin} className="btn btn-secondary">
+            Facebook
+          </button>
+          <button className="btn btn-secondary">Twitter</button>
         </div>
       </div>
 

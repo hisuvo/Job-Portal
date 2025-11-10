@@ -1,11 +1,11 @@
 import { FaBriefcase } from "react-icons/fa6";
-import useToggle from "../hook/useToggle";
-import NavbarLogo from "../assets/logo.png";
-import Button from "../shared/Button";
+import useToggle from "../../hook/useToggle";
+import NavbarLogo from "../../assets/logo.png";
+import Button from "../../shared/Button";
 import { Link, NavLink } from "react-router";
 import { IoPersonAddOutline } from "react-icons/io5";
-import MobileMenu from "./menu/MobileMenu";
-import DesktopMenu from "./menu/DesktopMenu";
+import MobileMenu from "./MobileMenu";
+import DesktopMenu from "./DesktopMenu";
 
 const Navbar = () => {
   const { isOn, open, close } = useToggle();
